@@ -2,6 +2,8 @@
 
 A drift detector for architecture decision records: it compares what your ADRs *decided* against what your implementation map says actually implements them — superseded decisions still anchoring files, accepted decisions with no evidence, broken supersedes graphs, and accepted-but-unimplemented records aging into staleness. Pure standard library, single file, offline. *Adjacent to ADR format checkers, not equivalent to them.*
 
+<p align="center"><img src="docs/demo.gif" alt="demo" width="720"></p>
+
 ## Problem
 
 ADR logs rot in a specific way: the log says "we chose Postgres" (ADR-0001), then ADR-0007 quietly moves to SQLite — but the migration checklist still cites ADR-0001, the schema files still live under a folder named for it, and nobody re-reads a record marked *Superseded* two years ago. Format checkers validate that each record is well-formed; nothing validates that the *decisions* still describe the *system*.
